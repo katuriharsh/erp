@@ -9,6 +9,73 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
   <link rel="icon" href="resources\PRERP_SA.png" type="image/x-icon" />
   <title>PRERP - Attendance</title>
+
+  <style type="text/css">
+    p, body, td, input, select, button { font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size: 14px; }
+    body { padding: 0px; margin: 0px; background-color: #ffffff; }
+    a { color: #1155a3; }
+    .space { margin: 10px 0px 10px 0px; }
+    .header { background: #003267; background: linear-gradient(to right, #011329 0%,#00639e 44%,#011329 100%); padding:20px 10px; color: white; box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75); }
+    .header a { color: white; }
+    .header h1 a { text-decoration: none; }
+    .header h1 { padding: 0px; margin: 0px; }
+    .main { padding: 10px; margin-top: 10px; }
+  </style>
+
+  <style>
+      .toolbar {
+          margin-bottom: 10px;
+      }
+
+      .toolbar-item a {
+          background-color: #fff;
+          border: 1px solid #c0c0c0;
+          color: #333;
+          padding: 8px 0px;
+          width: 80px;
+          border-radius: 2px;
+          cursor: pointer;
+          display: inline-block;
+          text-align: center;
+          text-decoration: none;
+      }
+
+      .toolbar-item a.selected-button {
+          background-color: #f3f3f3;
+          color: #000;
+      }
+
+      /* context menu icons */
+      .icon:before {
+          position: absolute;
+          margin-left: 0px;
+          margin-top: 3px;
+          width: 14px;
+          height: 14px;
+          content: '';
+      }
+
+      .icon-blue:before { background-color: #3d85c6; }
+      .icon-green:before { background-color: #6aa84f; }
+      .icon-orange:before { background-color: #e69138; }
+      .icon-red:before { background-color: #cc4125; }
+
+      /* active areas */
+      .area-menu-icon {
+          background-color: #333333;
+          box-sizing: border-box;
+          border-radius: 10px;
+          opacity: 0.7;
+          color: white;
+          display: flex;
+          justify-content: center;
+          font-size: 14px;
+      }
+  </style>
+
+  <!-- DayPilot library -->
+  <script src="js/calander.js"></script>
+
 </head>
 
 <body>
@@ -18,7 +85,7 @@
         <div class="logo">
           <a href="dashboard.html"><img src="resources\PRERP_SA.png" alt="" />
           </a>
-          <h1>PR<span class="title">ERP</span></h1>
+          <h1><span class="title">ERP</span></h1>
           <div class="close" id="close-btn">
             <span class="material-icons-sharp"> close </span>
           </div>
@@ -31,7 +98,7 @@
             <h3>Profile</h3>
           </a>
           <a href="attendance.html" class="active"><span class="material-icons-sharp"> calendar_month </span>
-            <h3>Attendance</h3>
+            <h3>Calendar</h3>
           </a>
           <a href="team.html" ><span class="material-icons-sharp"> calendar_month </span>
             <h3>team</h3>
@@ -61,277 +128,216 @@
     </aside>
 
     <main>
-      <h1>Attendance</h1>
-
+      <h1>Calendar</h1>
+      
       <div class="date">
         <!-- <input type="date" value="2022-08-26" /> -->
-        <label for="date">26 / 08 / 2022</label>
+        <label for="date">13 / 05 / 2023</label>
       </div>
-      <div class="insights">
-        <div class="attendance">
-          <span class="material-icons-sharp"> calendar_month </span>
-          <div class="middle">
-            <div class="left">
-              <h3>Total Attendance</h3>
-              <h1 id="totattendance"></h1>
-            </div>
-            <div class="progress">
-              <svg>
-                <!-- <circle cx="38" cy="38" r="36"></circle> -->
-              </svg>
-              <div class="number">
-                <p id="totattendance1"></p>
-              </div>
-            </div>
+      
+      
+      <div class="main">
+        <div style="display:flex">
+          <div >
+            <div id="nav"></div>
           </div>
-          <small class="text-muted"></small>
-        </div>
-        <div class="csp">
-          <span class="material-icons-sharp"> analytics </span>
-          <div class="middle">
-            <div class="left">
-              <h3>Current Semester Percentage</h3>
-              <h1 id="currsemper"></h1>
+          <div style="flex-grow: 1; margin-left: 10px;">
+            <div class="toolbar buttons">
+              <span class="toolbar-item"><a id="buttonDay" href="#">Day</a></span>
+              <span class="toolbar-item"><a id="buttonWeek" href="#">Week</a></span>
+              <span class="toolbar-item"><a id="buttonMonth" href="#">Month</a></span>
             </div>
-            <div class="progress">
-              <svg>
-                <!-- <circle cx="38" cy="38" r="36"></circle> -->
-              </svg>
-              <div class="number">
-                <p id="currsemper1"></p>
-              </div>
-            </div>
+            <div id="dpDay"></div>
+            <div id="dpWeek"></div>
+            <div id="dpMonth"></div>
           </div>
-          <small class="text-muted">This semester</small>
-        </div>
-        <div class="op">
-          <span class="material-icons-sharp"> assessment </span>
-          <div class="middle">
-            <div class="left">
-              <h3>Overall Percentage</h3>
-              <h1 id="overallper"></h1>
-            </div>
-            <div class="progress">
-              <svg>
-                <!-- <circle cx="38" cy="38" r="36"></circle> -->
-              </svg>
-              <div class="number">
-                <p id="overallper1"></p>
-              </div>
-            </div>
-          </div>
-          <small class="text-muted">All semesters</small>
         </div>
       </div>
-      <div class="recent-activity">
-        <h2>Attendance - VI Semester</h2>
-        <table>
-          <thread>
-            <tr>
-              <th>Months</th>
-              <th>Subject Name</th>
-              <th>Total Class Held</th>
-              <th>Total Present</th>
-              <th>Total Absent</th>
-              <th>Total Present Percentage</th>
-              <th>Total Absent Percentage</th>
-            </tr>
-          </thread>
-          <tbody>
-            <tr>
+      
+      <script type="text/javascript">
+      
+      
+        const nav = new DayPilot.Navigator("nav");
+        nav.showMonths = 3;
+        nav.skipMonths = 3;
+        nav.init();
+      
+        const day = new DayPilot.Calendar("dpDay");
+        day.viewType = "Day";
+        configureCalendar(day);
+        day.init();
+      
+        const week = new DayPilot.Calendar("dpWeek");
+        week.viewType = "Week";
+        configureCalendar(week);
+        week.init();
+      
+        const month = new DayPilot.Month("dpMonth");
+        configureCalendar(month);
+        month.init();
+      
+        function configureCalendar(dp) {
+          dp.contextMenu = new DayPilot.Menu({
+            items: [
+              {
+                text: "Delete",
+                onClick: async args => {
+                  var params = {
+                    id: args.source.id(),
+                  };
+                  await DayPilot.Http.post("calendar_delete.php", params);
+                  dp.events.remove(params.id);
+                  console.log("Deleted");
+                }
+              },
+              {
+                text: "-"
+              },
+              {
+                text: "Blue",
+                icon: "icon icon-blue",
+                color: "#3d85c6",
+                onClick: args => { updateColor(args.source, args.item.color); }
+              },
+              {
+                text: "Green",
+                icon: "icon icon-green",
+                color: "#6aa84f",
+                onClick: args => { updateColor(args.source, args.item.color); }
+              },
+              {
+                text: "Orange",
+                icon: "icon icon-orange",
+                color: "#e69138",
+                onClick: args => { updateColor(args.source, args.item.color); }
+              },
+              {
+                text: "Red",
+                icon: "icon icon-red",
+                color: "#cc4125",
+                onClick: args => { updateColor(args.source, args.item.color); }
+              }
+            ]
+          });
+      
+      
+          dp.onBeforeEventRender = args => {
+            if (!args.data.backColor) {
+              args.data.backColor = "#6aa84f";
+            }
+            args.data.borderColor = "darker";
+            args.data.fontColor = "#fff";
+            args.data.barHidden = true;
+      
+            args.data.areas = [
+              {
+                right: 2,
+                top: 2,
+                width: 20,
+                height: 20,
+                html: "&equiv;",
+                action: "ContextMenu",
+                cssClass: "area-menu-icon",
+                visibility: "Hover"
+              }
+            ];
+          };
+      
+          dp.onEventMoved = async args => {
+            const params = {
+              id: args.e.id(),
+              newStart: args.newStart,
+              newEnd: args.newEnd
+            };
+            await DayPilot.Http.post("calendar_move.php", params);
+            console.log("Moved.");
+          };
+      
+          dp.onEventResized = async args => {
+            const params = {
+              id: args.e.id(),
+              newStart: args.newStart,
+              newEnd: args.newEnd
+            };
+            await DayPilot.Http.post("calendar_move.php", params);
+            console.log("Resized.");
+          };
+      
+          dp.onTimeRangeSelected = async args => {
+      
+            const form = [
+              {name: "Name", id: "text"},
+              {name: "Start", id: "start", dateFormat: "MMMM d, yyyy h:mm tt", disabled: true},
+              {name: "End", id: "end", dateFormat: "MMMM d, yyyy h:mm tt", disabled: true},
+            ];
+      
+            const data = {
+              start: args.start,
+              end: args.end,
+              text: "Event"
+            };
+      
+            const dp = switcher.active.control;
+      
+            const modal = await DayPilot.Modal.form(form, data);
+            dp.clearSelection();
+      
+            if (modal.canceled) {
+              return;
+            }
+      
+            const {data: result} = await DayPilot.Http.post("calendar_create.php", modal.result);
+      
+            dp.events.add({
+              start: data.start,
+              end: data.end,
+              id: result.id,
+              text: data.text
+            });
+      
+          };
+      
+          dp.onEventClick = args => {
+            DayPilot.Modal.alert(args.e.data.text);
+          };
+        }
+      
+        const switcher = new DayPilot.Switcher({
+          triggers: [
+            {id: "buttonDay", view: day },
+            {id: "buttonWeek", view: week},
+            {id: "buttonMonth", view: month}
+          ],
+          navigator: nav,
+          selectedClass: "selected-button",
+          onChanged: args => {
+            console.log("onChanged fired");
+            switcher.events.load("calendar_events.php");
+          }
+        });
+      
+        switcher.select("buttonWeek");
+      
+        async function updateColor(e, color) {
+          const params = {
+            id: e.data.id,
+            color: color
+          };
+      
+          await DayPilot.Http.post("calendar_color.php", params);
+          const dp = switcher.active.control;
+          e.data.backColor = color;
+          dp.events.update(e);
+          console.log("Color updated");
+        }
+      
+      </script>
+      
+      
+      
 
-              <td><b>April 2022 - August 2022</b></td>
-              <td id="sub1"></td>
-              <td id="totalclass"></td>
-              <td id="totalpresent"></td>
-              <td id="totalabsent"></td>
-              <td id="presentpercentage" class="success"></td>
-              <td id="absentpercentage" class="danger"></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td></td>
-              <td id="sub2"></td>
-              <td id="totalclass2"></td>
-              <td id="totalpresent2"></td>
-              <td id="totalabsent2"></td>
-              <td class="success" id="presentpercentage2"></td>
-              <td class="danger" id="absentpercentage2"></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td></td>
-              <td id="sub3"></td>
-              <td id="totalclass3"></td>
-              <td id="totalpresent3"></td>
-              <td id="totalabsent3"></td>
-              <td class="success" id="presentpercentage3"></td>
-              <td class="danger" id="absentpercentage3"></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td></td>
-              <td id="sub4"></td>
-              <td id="totalclass4"></td>
-              <td id="totalpresent4"></td>
-              <td id="totalabsent4"></td>
-              <td class="success" id="presentpercentage4"></td>
-              <td class="danger" id="absentpercentage4"></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td></td>
-              <td id="sub5"></td>
-              <td id="totalclass5"></td>
-              <td id="totalpresent5"></td>
-              <td id="totalabsent5"></td>
-              <td class="success" id="presentpercentage5"></td>
-              <td class="danger" id="absentpercentage5"></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td></td>
-              <td id="sub6"></td>
-              <td id="totalclass6"></td>
-              <td id="totalpresent6"></td>
-              <td id="totalabsent6"></td>
-              <td class="success" id="presentpercentage6"></td>
-              <td class="danger" id="absentpercentage6"></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td></td>
-              <td id="sub7"></td>
-              <td id="totalclass7"></td>
-              <td id="totalpresent7"></td>
-              <td id="totalabsent7"></td>
-              <td class="success" id="presentpercentage7"></td>
-              <td class="danger" id="absentpercentage7"></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td></td>
-              <td><b>Total</b></td>
-              <td id="totalclasses"></td>
-              <td id="totalpresent_final"></td>
-              <td id="totalabsent_final"></td>
-              <td class="success" id="totalpresentpercentage"></td>
-              <td class="danger" id="totalabsentpercentage"></td>
-            </tr>
-          </tbody>
-        </table>
-        <br>
-        <!-- <table>
-            <thread>
-              <tr>
-                <th>Month</th>
-                <th>Subject Name</th>
-                <th>Total Class Held</th>
-                <th>Total Present</th>
-                <th>Total Absent</th>
-                <th>Total Present Percentage</th>
-                <th>Total Absent Percentage</th>
-              </tr>
-            </thread>
-            <tbody>
-              <tr>
-                
-                <td><b>June 2022</b></td>
-                <td>Entrrepreneuship and Innovation</td>
-                <td>5</td>
-                <td>4</td>
-                <td>1</td>
-                <td class="success">80.00</td>
-                <td class="danger">20.00</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>Machine Learning</td>
-                <td>16</td>
-                <td>15</td>
-                <td>1</td>
-                <td class="success">93.75</td>
-                <td class="danger">6.25</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>Major Project</td>
-                <td>2</td>
-                <td>2</td>
-                <td>0</td>
-                <td class="success">100.0</td>
-                <td class="danger">0.0</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>Professional and Business Communication</td>
-                <td>15</td>
-                <td>15</td>
-                <td>0</td>
-                <td class="success">100.00</td>
-                <td class="danger">0.00</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>System Programming</td>
-                <td>11</td>
-                <td>10</td>
-                <td>1</td>
-                <td class="success">90.91</td>
-                <td class="danger">9.09</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>Web Programming</td>
-                <td>9</td>
-                <td>9</td>
-                <td>0</td>
-                <td class="success">100.00</td>
-                <td class="danger">0.0</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>Web Programming Lab</td>
-                <td>2</td>
-                <td>2</td>
-                <td>0</td>
-                <td class="success">100.00</td>
-                <td class="danger">0.0</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td></td>
-                <td><b>Total</b></td>
-                <td>52</td>
-                <td>42</td>
-                <td>4</td>
-                <td class="success">92.31</td>
-                <td class="danger">7.69</td>
-              </tr>
-            </tbody>
-          </table> -->
 
-      </div>
+      
     </main>
 
     <div class="right">
@@ -361,33 +367,25 @@
         <div class="updates">
           <div class="update">
             <div class="profile-photo">
-              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+              <img src="resources/Tax.webp" alt="avatar" />
             </div>
             <div class="message">
-              <p><b>XACTITUDE 2022</b> at Kristu Jayanti College.</p>
-              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+              <p><b>Tax 2023</b>Central Government. </p>
+              <small class="text-muted">Income Iax.</small>
             </div>
           </div>
           <div class="update">
             <div class="profile-photo">
-              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
+              <img src="resources/hospital.webp" alt="avatar" />
             </div>
             <div class="message">
-              <p><b># 2022</b> at Charan's Degree College..</p>
-              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
-            </div>
-          </div>
-          <div class="update">
-            <div class="profile-photo">
-              <img src="..\resources\848351_cup_512x512.png" alt="avatar" />
-            </div>
-            <div class="message">
-              <p><b>SYNTAXIA 2022</b> at St. Joseph's College.</p>
-              <small class="text-muted">Team TECHNOZIA won the overalls.</small>
+              <p><b>Project</b> Hospital Website</p>
+              <small class="text-muted">Yashodha Group</small>
             </div>
           </div>
         </div>
       </div>
+
       <div class="upcoming-events">
         <h2>Upcoming Events</h2>
         <div class="update">
@@ -396,12 +394,12 @@
           </div>
           <div class="right">
             <div class="info">
-              <h3>Prefinals</h3>
-              <small class="text-muted">From 2nd August, 2022.</small>
+              <h3>Tax Slab Selection</h3>
+              <small class="text-muted">From 2nd March, 2023.</small>
             </div>
-            <h5 class="success">Lab Prefinals.</h5>
+            <h5 class="success">Tax Slab.</h5>
             <h3>
-              Attendance is mandatory.
+              Mandatory.
             </h3>
           </div>
         </div>
@@ -411,16 +409,16 @@
           </div>
           <div class="right">
             <div class="info">
-              <h3>Fees Payment Reminder</h3>
-              <small class="text-muted">By 20th Augus, 2022.</small>
+              <h3>Refferels</h3>
+              <small class="text-muted">from 12th Feb, 2023.</small>
+            </div>
+            <div class="info">
+              <small class="text-muted">To 28th Feb, 2023.</small>
             </div>
             <h5 class="danger">
-              Students with outstanding payment won't be given their hallticket.
+              If Your reffered candidate is selected for position you will be given $5000.
 
             </h5>
-            <h3>
-              Everyone should pay their fees within the date.
-            </h3>
           </div>
         </div>
         <div class="update">
@@ -429,15 +427,15 @@
           </div>
           <div class="right">
             <div class="info">
-              <h3>Practical Finals</h3>
-              <small class="text-muted">From 24th August, 2022.</small>
+              <h3>Sodexo</h3>
+              <small class="text-muted">From 24th March, 2023.</small>
+            </div>
+            <div class="info">
+              <small class="text-muted">To 24th August, 2023.</small>
             </div>
             <h5 class="success">
-              All the best to appearing students.
+              Those who want Sodexo meal pass need to apply/ renew it within given dead line.
             </h5>
-            <h3>
-              Everyone is requested to be in uniform and carry their hallticket and ID card.
-            </h3>
           </div>
         </div>
 
