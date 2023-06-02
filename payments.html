@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+  <link rel="icon" href="resources\PRERP_SA.png" type="image/x-icon" />
+  <title>PRERP - Profile</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <a href="dashboard.html"><img src="resources\PRERP_SA.png" alt="" />
+          </a>
+          <h1><span class="title">ERP</span></h1>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp"> close </span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="dashboard.html"><span class="material-icons-sharp"> grid_view </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="profile.html" ><span class="material-icons-sharp"> person </span>
+            <h3>Profile</h3>
+          </a>
+
+          <a href="attendance.html"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Calendar</h3>
+          </a>
+          <a href="team.html"><span class="material-icons-sharp"> assignment </span>
+            <h3> team</h3>
+          </a>
+          <a href="payments.html" class="active"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Payments</h3>
+          </a>
+          <a href="performance.html" ><span class="material-icons-sharp"> calendar_month </span>
+            <h3>Performance</h3>
+          </a>
+          <a href="feedback.html"><span class="material-icons-sharp"> forum </span>
+            <h3>Feedback</h3>
+          </a>
+
+          <a href="updatepassword.html"><span class="material-icons-sharp">
+              manage_accounts
+            </span>
+            <h3>Update Password</h3>
+          </a>
+
+          <a href="index.html" onclick="return confirm('Are you sure you want to Logout?')"><span
+              class="material-icons-sharp"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+        <h1>Payments</h1>
+  
+        <div class="date">
+          <!-- <input type="date" value="2022-08-26" /> -->
+          <label for="date">13 / 05 / 2023</label>
+        </div>
+
+          <div class="pay">
+      
+            <style>
+              .payment-section {
+                padding: 20px;
+                border: 2px solid #ccc;
+                margin-top: 20px;
+                max-width: 1000px;
+                margin: 0 auto;
+              }
+      
+              .payment-section h2 {
+                margin-top: 0;
+                font-size: 32px;
+                font-weight: bold;
+                text-align: center;
+              }
+      
+              .payment-section h3 {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                text-align: center;
+              }
+      
+      
+              .employee-details {
+                margin-bottom: 20px;
+              }
+      
+              .employee-details .p2 {
+                margin-left: 300px;
+                margin-bottom: 5px;
+              }
+      
+              .p1 {
+                font-size: 16px;
+                margin-bottom: 5px;
+      
+              }
+      
+              .p2 {
+                font-size: 16px;
+                margin-top: -80px;
+              }
+      
+      
+              table {
+                border-collapse: collapse;
+                width: 100%;
+              }
+      
+              table th {
+                text-align: left;
+                font-size: 18px;
+                font-weight: bold;
+                padding: 10px;
+                background-color: #f2f2f2;
+                border: 1px solid #ccc;
+              }
+      
+              table td {
+                padding: 10px;
+                border: 1px solid #ccc;
+                font-size: 16px;
+              }
+      
+      
+              a {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px;
+      
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 16px;
+                text-align: center;
+                transition: background-color 0.3s ease;
+              }
+      
+              a:hover {
+                background-color: #004080;
+              }
+      
+      
+              @media print {
+                .payment-section {
+                  max-width: none;
+                  border: none;
+                  margin: 0;
+                  padding: 0;
+                }
+      
+                .payment-section h2 {
+                  font-size: 24px;
+                }
+      
+                .payment-section h3 {
+                  font-size: 18px;
+                  margin-top: 5px;
+                  margin-bottom: 10px;
+                }
+      
+                .employee-details p {
+                  font-size: 16px;
+                  margin-bottom: 2px;
+                }
+      
+                table th {
+                  font-size: 16px;
+                  padding: 5px;
+                }
+      
+                table td {
+                  font-size: 14px;
+                  padding: 5px;
+                }
+      
+      
+              }
+            </style>
+      
+      
+            <div class="payment-section">
+              <h2> WEBERP</h2>
+              <h3>Salary Slip for Month</h3>
+              <div class="employee-details">
+                <div class="p1">
+                  <p>Name: Akash Kumar</p>
+                  <p> Department: Web Development</p>
+                  <p>Employee No.: 23HY202586</p>
+                </div>
+                <div class="p2">
+                  <p>Bank Name: ICICI </p>
+                  <p>Designation: WebDeveloper</p>
+                  <p>A/C No.: 1234567890</p>
+                </div>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Earnings</th>
+                    <th>Amount</th>
+                    <th>Deductions</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Basic Salary</td>
+                    <td>$5000</td>
+                    <td>EPF</td>
+                    <td>$500</td>
+                  </tr>
+                  <tr>
+                    <td>House Rent Allowance</td>
+                    <td>$1000</td>
+                    <td>Health Insurance</td>
+                    <td>$100</td>
+                  </tr>
+                  <tr>
+                    <td>Conveyance Allowance</td>
+                    <td>$500</td>
+                    <td>TDS</td>
+                    <td>$500</td>
+                  </tr>
+                  <tr>
+                    <td>Medical Allowance</td>
+                    <td>$500</td>
+                    <td>Professional tax</td>
+                    <td>$500</td>
+                  </tr>
+                  <tr>
+                    <td>Special Allowance</td>
+                    <td>$500</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+      
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Total Earnings</td>
+                    <td>$6500</td>
+                    <td>Total Deductions</td>
+                    <td>$1100</td>
+                  </tr>
+                  <tr>
+                    <td>Net Pay</td>
+                    <td>$5400</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#" download>Download Payslip</a>
+            </div>
+          </div>
+    </main>
+
+    <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+          <div class="theme-toggler" id="theme">
+            <span class="material-icons-sharp active"> light_mode </span>
+            <span class="material-icons-sharp"> dark_mode </span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Hey, <b id="user"></b></p>
+              <small class="text-muted">Family </small>
+            </div>
+            <a href="profile.html">
+              <div class="profile-photo">
+                <img src="resources\download.webp" alt="avatar" />
+              </div>
+            </a>
+          </div>
+        </div>
+  
+        <div class="recent-updates">
+          <h2>Recent Updates</h2>
+          <div class="updates">
+            <div class="update">
+              <div class="profile-photo">
+                <img src="resources/Tax.webp" alt="avatar" />
+              </div>
+              <div class="message">
+                <p><b>Tax 2023</b>Central Government. </p>
+                <small class="text-muted">Income Iax.</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="resources/hospital.webp" alt="avatar" />
+              </div>
+              <div class="message">
+                <p><b>Project</b> Hospital Website</p>
+                <small class="text-muted">Yashodha Group</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="upcoming-events">
+          <h2>Upcoming Events</h2>
+          <div class="update">
+            <div class="icon">
+              <span class="material-icons-sharp"> event </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>Tax Slab Selection</h3>
+                <small class="text-muted">From 2nd March, 2023.</small>
+              </div>
+              <h5 class="success">Tax Slab.</h5>
+              <h3>
+                Mandatory.
+              </h3>
+            </div>
+          </div>
+          <div class="update">
+            <div class="icon">
+              <span class="material-icons-sharp"> event </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>Refferels</h3>
+                <small class="text-muted">from 12th Feb, 2023.</small>
+              </div>
+              <div class="info">
+                <small class="text-muted">To 28th Feb, 2023.</small>
+              </div>
+              <h5 class="danger">
+                If Your reffered candidate is selected for position you will be given $5000.
+  
+              </h5>
+            </div>
+          </div>
+          <div class="update">
+            <div class="icon">
+              <span class="material-icons-sharp"> event </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>Sodexo</h3>
+                <small class="text-muted">From 24th March, 2023.</small>
+              </div>
+              <div class="info">
+                <small class="text-muted">To 24th August, 2023.</small>
+              </div>
+              <h5 class="success">
+                Those who want Sodexo meal pass need to apply/ renew it within given dead line.
+              </h5>
+            </div>
+          </div>
+  
+          <!-- <div class="addupdate">
+              <div class="icon">
+                <span class="material-icons-sharp">
+                  add
+                  </span>
+              </div>
+              <div class="right">
+                <div class="info">
+                  <h3>Add Update</h3>
+              </div>
+            </div>
+          </div> -->
+        </div>
+    </div>
+    <script src="../js/index.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDSwa5QCOPlCwlAyRX7F8I-synwsE_lghs",
+        authDomain: "prerp-908a2.firebaseapp.com",
+        projectId: "prerp-908a2",
+        storageBucket: "prerp-908a2.appspot.com",
+        messagingSenderId: "112490917596",
+        appId: "1:112490917596:web:e150d64aff97fc3e42ce19",
+        measurementId: "G-12XTBRXK5K"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        child,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+      const db = getDatabase();
+
+      let userid = document.getElementById('user');
+      let logout = document.getElementById('logout');
+
+      var currentuser = null;
+
+      function username() {
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+        if (keepLoggedIn == "yes")
+          currentuser = JSON.parse(localStorage.getItem('user'));
+        else
+          currentuser = JSON.parse(sessionStorage.getItem('user'));
+      }
+
+      function signout() {
+        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        localStorage.removeItem('keepLoggedIn');
+        window.location = "index.html";
+      }
+
+      window.onload = function () {
+        username();
+        if (currentuser != null) {
+          user.innerText = currentuser.name;
+          uname.innerText = currentuser.name;
+          classd.innerText = currentuser.classandsection;
+          rnod.innerText = currentuser.registerno;
+          pnod.innerText = currentuser.phoneno;
+          coursed.innerText = currentuser.course;
+          batchd.innerText = currentuser.batch;
+          maild.innerText = currentuser.mail;
+          addressd.innerText = currentuser.address;
+          bgrpd.innerText = currentuser.bloodgrp;
+
+          fname.innerText = currentuser.fathername;
+          mnamed.innerText = currentuser.mothername;
+          fnod.innerText = currentuser.fatherno;
+          mnod.innerText = currentuser.motherno;
+          padd.innerText = currentuser.parentaddress;
+
+        }
+        if (currentuser != null && currentuser.securedmarks1 != null && currentuser.sub1 != null) {
+
+          var totpresent = ((currentuser.sub1present) + (currentuser.sub2present) + (currentuser.sub3present) + (currentuser.sub4present) + (currentuser.sub5present) + (currentuser.sub6present) + (currentuser.sub7present));
+          var totclass = ((currentuser.sub1tot) + (currentuser.sub2tot) + (currentuser.sub3tot) + (currentuser.sub4tot) + (currentuser.sub5tot) + (currentuser.sub6tot) + (currentuser.sub7tot));
+          totattendance.innerText = ((totpresent / totclass) * 100).toFixed(2) + "%";
+
+          var midterm = ((Number(currentuser.securedmarks1) + Number(currentuser.securedmarks2) + Number(currentuser.securedmarks3) + Number(currentuser.securedmarks4) + Number(currentuser.securedmarks5)) / (Number(currentuser.totalmarks1) + Number(currentuser.totalmarks2) + Number(currentuser.totalmarks3) + Number(currentuser.totalmarks4) + Number(currentuser.totalmarks5)) * 100).toFixed(2);
+          if (currentuser.psecuredmarks1 != null) {
+            var prefinals = ((Number(currentuser.psecuredmarks1) + Number(currentuser.psecuredmarks2) + Number(currentuser.psecuredmarks3) + Number(currentuser.psecuredmarks4) + Number(currentuser.psecuredmarks5)) / (Number(currentuser.ptotalmarks1) + Number(currentuser.ptotalmarks2) + Number(currentuser.ptotalmarks3) + Number(currentuser.ptotalmarks4) + Number(currentuser.ptotalmarks5)) * 100).toFixed(2);
+            currsemper.innerText = ((Number(midterm) + Number(prefinals)) / 2).toFixed(2) + "%";
+            overallper.innerText = ((Number(midterm) + Number(prefinals)) / 2).toFixed(2) + "%";
+          }
+          else {
+            currsemper.innerText = (Number(midterm)).toFixed(2) + "%";
+            overallper.innerText = (Number(midterm)).toFixed(2) + "%";
+          }
+
+
+
+
+        } else {
+          totattendance.innerText = 80 + "%";
+
+          currsemper.innerText = 80 + "%";
+
+          overallper.innerText = 80 + "%";
+
+
+
+        }
+      }
+
+
+
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+  integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</html>

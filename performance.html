@@ -28,7 +28,7 @@
           <a href="dashboard.html"><span class="material-icons-sharp"> grid_view </span>
             <h3>Dashboard</h3>
           </a>
-          <a href="profile.html" class="active"><span class="material-icons-sharp"> person </span>
+          <a href="profile.html" ><span class="material-icons-sharp"> person </span>
             <h3>Profile</h3>
           </a>
 
@@ -41,7 +41,7 @@
           <a href="payments.html" ><span class="material-icons-sharp"> calendar_month </span>
             <h3>Payments</h3>
           </a>
-          <a href="performance.html" ><span class="material-icons-sharp"> calendar_month </span>
+          <a href="performance.html" class="active"><span class="material-icons-sharp"> calendar_month </span>
             <h3>Performance</h3>
           </a>
           <a href="feedback.html"><span class="material-icons-sharp"> forum </span>
@@ -63,223 +63,167 @@
     </aside>
 
     <main>
-      <h1>Profile</h1>
+        <h1>Performance</h1>
+  
+        <div class="date">
+          <!-- <input type="date" value="2022-08-26" /> -->
+          <label for="date">13 / 05 / 2023</label>
+        </div>
 
-      <div class="date">
-        <!-- <input type="date" value="2022-08-26" /> -->
-        <label for="date">13 / 05 / 2023</label>
-      </div>
-
-      <div class="insights">
-        <div class="attendance">
-          <span class="material-icons-sharp"> calendar_month </span>
-          <div class="middle">
-            <div class="left">
-              <h3>Total Attendance</h3>
-              <h1 id="totattendance">80%</h1>
+        <div class="insights">
+            <div class="attendance">
+              <span class="material-icons-sharp"> calendar_month </span>
+              <div class="middle">
+                <div class="left">
+                  <h3>Total Attendance</h3>
+                  <h1 id="totattendance">80%</h1>
+                </div>
+                <div class="progress">
+                  <svg>
+                    <!-- <circle cx="38" cy="38" r="36"></circle> -->
+                  </svg>
+                  <div class="number">
+                    <p id="totattendance1"></p>
+                  </div>
+                </div>
+              </div>
+              <small class="text-muted"></small>
             </div>
-            <div class="progress">
-              <svg>
-                <!-- <circle cx="38" cy="38" r="36"></circle> -->
-              </svg>
-              <div class="number">
-                <p id="totattendance1"></p>
+            <div class="op">
+              <span class="material-icons-sharp"> assessment </span>
+              <div class="middle">
+                <div class="left">
+                  <h3>Overall Performance</h3>
+                  <h1 id="overallper">90%</h1>
+                </div>
+                <div class="progress">
+                  <svg>
+                    <!-- <circle cx="38" cy="38" r="36"></circle> -->
+                  </svg>
+                  <div class="number">
+                    <p id="overallper1"></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <small class="text-muted"></small>
-        </div>
-        <div class="op">
-          <span class="material-icons-sharp"> assessment </span>
-          <div class="middle">
-            <div class="left">
-              <h3>Overall Performance</h3>
-              <h1 id="overallper">90%</h1>
-            </div>
-            <div class="progress">
-              <svg>
-                <!-- <circle cx="38" cy="38" r="36"></circle> -->
-              </svg>
-              <div class="number">
-                <p id="overallper1"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="details">
-        <h2>User Details</h2>
-        <div class="user-details">
-          <div class="deets">
-            <div class="name d">Name:</div>
-            <div id="uname">Akash Kumar</div>
-          </div>
-          <div class="deets">
-            <div class="rno d">Register Number: </div>
-            <div id="rnod">23HY202586</div>
-          </div>
-          <div class="deets">
-            <div class="batch d">Department: </div>
-            <div id="batchd">Web Development</div>
-          </div>
-          <div class="deets">
-            <div class="batch d">Designation: </div>
-            <div id="batchd">WebDeveloper</div>
-          </div>
-          <div class="deets">
-            <div class="pno d">Phone Number: </div>
-            <div id="pnod">7523695682</div>
-          </div>
-          <div class="deets">
-            <div class="mail d">Mail: </div>
-            <div id="maild">Akash@company.com</div>
-          </div>
-          <div class="deets">
-            <div class="address d">Address:</div>
-            <div id="addressd">9/48,Nethaji Colony,Boduppal, Hyderbad, Telangana, India, 500092</div>
-          </div>
-          <div class="deets">
-            <div class="bgrp d">Blood Group:</div>
-            <div id="bgrpd">A+</div>
-          </div>
-          <div class="deets"></div>
-        </div>
-      </div>
-      <br>
-      <div class="details">
-        <h2>Parents Details</h2>
-        <div class="user-details">
-          <div class="deets">
-            <div class="fname d">Father's Name:</div>
-            <div id="fname">Rajesh Kumar</div>
-          </div>
-          <div class="deets">
-            <div class="mname d">Mother's Name:</div>
-            <div id="mnamed">Shanthi</div>
-          </div>
-          <div class="deets">
-            <div class="fadd d">Address: </div>
-            <div id="padd">9/48,Nethaji Colony,Boduppal, Hyderbad, Telangana, India, 500092</div>
-          </div>
-          <div class="deets"></div>
-        </div>
-      </div> <br>
+          <br>
     </main>
+
     <div class="right">
-      <div class="top">
-        <button id="menu-btn">
-          <span class="material-icons-sharp"> menu </span>
-        </button>
-        <div class="theme-toggler" id="theme">
-          <span class="material-icons-sharp active"> light_mode </span>
-          <span class="material-icons-sharp"> dark_mode </span>
-        </div>
-        <div class="profile">
-          <div class="info">
-            <p>Hey, <b id="user"></b></p>
-            <small class="text-muted">Student </small>
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+          <div class="theme-toggler" id="theme">
+            <span class="material-icons-sharp active"> light_mode </span>
+            <span class="material-icons-sharp"> dark_mode </span>
           </div>
-          <a href="profile.html">
-            <div class="profile-photo">
-              <img src="resources\download.webp" alt="avatar" />
+          <div class="profile">
+            <div class="info">
+              <p>Hey, <b id="user"></b></p>
+              <small class="text-muted">Family </small>
             </div>
-          </a>
+            <a href="profile.html">
+              <div class="profile-photo">
+                <img src="resources\download.webp" alt="avatar" />
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="recent-updates">
-        <h2>Recent Updates</h2>
-        <div class="updates">
+  
+        <div class="recent-updates">
+          <h2>Recent Updates</h2>
+          <div class="updates">
+            <div class="update">
+              <div class="profile-photo">
+                <img src="resources/Tax.webp" alt="avatar" />
+              </div>
+              <div class="message">
+                <p><b>Tax 2023</b>Central Government. </p>
+                <small class="text-muted">Income Iax.</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="resources/hospital.webp" alt="avatar" />
+              </div>
+              <div class="message">
+                <p><b>Project</b> Hospital Website</p>
+                <small class="text-muted">Yashodha Group</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="upcoming-events">
+          <h2>Upcoming Events</h2>
           <div class="update">
-            <div class="profile-photo">
-              <img src="resources/Tax.webp" alt="avatar" />
-            </div>
-            <div class="message">
-              <p><b>Tax 2023</b>Central Government. </p>
-              <small class="text-muted">Income Iax.</small>
-            </div>
-          </div>
-          <div class="update">
-            <div class="profile-photo">
-              <img src="resources/hospital.webp" alt="avatar" />
-            </div>
-            <div class="message">
-              <p><b>Project</b> Hospital Website</p>
-              <small class="text-muted">Yashodha Group</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="upcoming-events">
-        <h2>Upcoming Events</h2>
-        <div class="update">
-          <div class="icon">
-            <span class="material-icons-sharp"> event </span>
-          </div>
-          <div class="right">
-            <div class="info">
-              <h3>Tax Slab Selection</h3>
-              <small class="text-muted">From 2nd March, 2023.</small>
-            </div>
-            <h5 class="success">Tax Slab.</h5>
-            <h3>
-              Mandatory.
-            </h3>
-          </div>
-        </div>
-        <div class="update">
-          <div class="icon">
-            <span class="material-icons-sharp"> event </span>
-          </div>
-          <div class="right">
-            <div class="info">
-              <h3>Refferels</h3>
-              <small class="text-muted">from 12th Feb, 2023.</small>
-            </div>
-            <div class="info">
-              <small class="text-muted">To 28th Feb, 2023.</small>
-            </div>
-            <h5 class="danger">
-              If Your reffered candidate is selected for position you will be given $5000.
-
-            </h5>
-          </div>
-        </div>
-        <div class="update">
-          <div class="icon">
-            <span class="material-icons-sharp"> event </span>
-          </div>
-          <div class="right">
-            <div class="info">
-              <h3>Sodexo</h3>
-              <small class="text-muted">From 24th March, 2023.</small>
-            </div>
-            <div class="info">
-              <small class="text-muted">To 24th August, 2023.</small>
-            </div>
-            <h5 class="success">
-              Those who want Sodexo meal pass need to apply/ renew it within given dead line.
-            </h5>
-          </div>
-        </div>
-
-        <!-- <div class="addupdate">
             <div class="icon">
-              <span class="material-icons-sharp">
-                add
-                </span>
+              <span class="material-icons-sharp"> event </span>
             </div>
             <div class="right">
               <div class="info">
-                <h3>Add Update</h3>
+                <h3>Tax Slab Selection</h3>
+                <small class="text-muted">From 2nd March, 2023.</small>
+              </div>
+              <h5 class="success">Tax Slab.</h5>
+              <h3>
+                Mandatory.
+              </h3>
             </div>
           </div>
-        </div> -->
+          <div class="update">
+            <div class="icon">
+              <span class="material-icons-sharp"> event </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>Refferels</h3>
+                <small class="text-muted">from 12th Feb, 2023.</small>
+              </div>
+              <div class="info">
+                <small class="text-muted">To 28th Feb, 2023.</small>
+              </div>
+              <h5 class="danger">
+                If Your reffered candidate is selected for position you will be given $5000.
+  
+              </h5>
+            </div>
+          </div>
+          <div class="update">
+            <div class="icon">
+              <span class="material-icons-sharp"> event </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>Sodexo</h3>
+                <small class="text-muted">From 24th March, 2023.</small>
+              </div>
+              <div class="info">
+                <small class="text-muted">To 24th August, 2023.</small>
+              </div>
+              <h5 class="success">
+                Those who want Sodexo meal pass need to apply/ renew it within given dead line.
+              </h5>
+            </div>
+          </div>
+  
+          <!-- <div class="addupdate">
+              <div class="icon">
+                <span class="material-icons-sharp">
+                  add
+                  </span>
+              </div>
+              <div class="right">
+                <div class="info">
+                  <h3>Add Update</h3>
+              </div>
+            </div>
+          </div> -->
+        </div>
       </div>
-    </div>
-    <script src="../js/index.js"></script>
+      <script src="../js/index.js"></script>
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
@@ -378,9 +322,9 @@
         } else {
           totattendance.innerText = 80 + "%";
 
-          currsemper.innerText = 0 + "%";
+          currsemper.innerText = 80 + "%";
 
-          overallper.innerText = 90 + "%";
+          overallper.innerText = 80 + "%";
 
 
 
@@ -394,5 +338,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
   integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 </html>

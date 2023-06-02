@@ -28,15 +28,14 @@
           <a href="dashboard.html"><span class="material-icons-sharp"> grid_view </span>
             <h3>Dashboard</h3>
           </a>
-          <a href="profile.html" class="active"><span class="material-icons-sharp"> person </span>
+          <a href="profile.html" ><span class="material-icons-sharp"> person </span>
             <h3>Profile</h3>
           </a>
-
           <a href="attendance.html"><span class="material-icons-sharp"> calendar_month </span>
             <h3>Calendar</h3>
           </a>
-          <a href="team.html"><span class="material-icons-sharp"> assignment </span>
-            <h3> team</h3>
+          <a href="team.html" class="active"><span class="material-icons-sharp"> calendar_month </span>
+            <h3>team</h3>
           </a>
           <a href="payments.html" ><span class="material-icons-sharp"> calendar_month </span>
             <h3>Payments</h3>
@@ -63,7 +62,7 @@
     </aside>
 
     <main>
-      <h1>Profile</h1>
+      <h1>Team</h1>
 
       <div class="date">
         <!-- <input type="date" value="2022-08-26" /> -->
@@ -109,61 +108,81 @@
       </div>
       <br>
       <div class="details">
-        <h2>User Details</h2>
-        <div class="user-details">
-          <div class="deets">
-            <div class="name d">Name:</div>
-            <div id="uname">Akash Kumar</div>
-          </div>
-          <div class="deets">
-            <div class="rno d">Register Number: </div>
-            <div id="rnod">23HY202586</div>
-          </div>
-          <div class="deets">
-            <div class="batch d">Department: </div>
-            <div id="batchd">Web Development</div>
-          </div>
-          <div class="deets">
-            <div class="batch d">Designation: </div>
-            <div id="batchd">WebDeveloper</div>
-          </div>
-          <div class="deets">
-            <div class="pno d">Phone Number: </div>
-            <div id="pnod">7523695682</div>
-          </div>
-          <div class="deets">
-            <div class="mail d">Mail: </div>
-            <div id="maild">Akash@company.com</div>
-          </div>
-          <div class="deets">
-            <div class="address d">Address:</div>
-            <div id="addressd">9/48,Nethaji Colony,Boduppal, Hyderbad, Telangana, India, 500092</div>
-          </div>
-          <div class="deets">
-            <div class="bgrp d">Blood Group:</div>
-            <div id="bgrpd">A+</div>
-          </div>
-          <div class="deets"></div>
-        </div>
-      </div>
-      <br>
-      <div class="details">
-        <h2>Parents Details</h2>
-        <div class="user-details">
-          <div class="deets">
-            <div class="fname d">Father's Name:</div>
-            <div id="fname">Rajesh Kumar</div>
-          </div>
-          <div class="deets">
-            <div class="mname d">Mother's Name:</div>
-            <div id="mnamed">Shanthi</div>
-          </div>
-          <div class="deets">
-            <div class="fadd d">Address: </div>
-            <div id="padd">9/48,Nethaji Colony,Boduppal, Hyderbad, Telangana, India, 500092</div>
-          </div>
-          <div class="deets"></div>
-        </div>
+        <h2>Team Details</h2>
+        <table>
+            <thread>
+              <tr>
+                <th>S.No</th>
+                <th>Employee Name</th>
+                <th>Position</th>
+                <th>Email id</th>
+                <th>Phone No</th>
+                <th>Location</th>
+                <th>Profile</th>
+              </tr>
+            </thread>
+            <tbody>
+              <tr>
+                <td id="no">1</td>
+                <td id="name">Akshay Reddy </td>
+                <td id="position">Team Lead</td>
+                <td id="mail">akshay@company.com</td>
+                <td id="phone" class="success">7020415325</td>
+                <td id="location" class="danger">Hyderabad</td>
+                <td id="profile" class="danger">
+                    <div class="profile-photo">
+                        <img src="resources/photo.jpeg" alt="avatar" />
+                      </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td id="no">2</td>
+                <td id="name">Amulya</td>
+                <td id="position">Manager</td>
+                <td id="mail">amulya@company.com</td>
+                <td id="phone" class="success">9511754236</td>
+                <td id="location" class="danger">Hyderabad</td>
+                <td id="profile" class="danger">
+                    <div class="profile-photo">
+                        <img src="resources/Akka Photo.jpeg" alt="avatar" />
+                      </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td id="no">3</td>
+                <td id="name">Harshitha</td>
+                <td id="position">Assistant Manager</td>
+                <td id="mail">Harshitha@company.com</td>
+                <td id="phone" class="success">9014523698</td>
+                <td id="location" class="danger">Banglore</td>
+                <td id="profile" class="danger">
+                    <div class="profile-photo">
+                        <img src="resources/photo.jpg" alt="avatar" />
+                      </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td id="no">4</td>
+                <td id="name">Awaiz</td>
+                <td id="position">Associate Manager</td>
+                <td id="mail">awaiz@company.com</td>
+                <td id="phone" class="success">6305625478</td>
+                <td id="location" class="danger">Chennai</td>
+                <td id="profile" class="danger">
+                    <div class="profile-photo">
+                        <img src="resources/Sai photo.jpg" alt="avatar" />
+                      </div>
+                </td>
+              </tr>
+            </tbody>
+            </tbody>
+          </table>
       </div> <br>
     </main>
     <div class="right">
@@ -178,7 +197,7 @@
         <div class="profile">
           <div class="info">
             <p>Hey, <b id="user"></b></p>
-            <small class="text-muted">Student </small>
+            <small class="text-muted">Family </small>
           </div>
           <a href="profile.html">
             <div class="profile-photo">
@@ -378,9 +397,9 @@
         } else {
           totattendance.innerText = 80 + "%";
 
-          currsemper.innerText = 0 + "%";
+          currsemper.innerText = 80 + "%";
 
-          overallper.innerText = 90 + "%";
+          overallper.innerText = 80 + "%";
 
 
 
